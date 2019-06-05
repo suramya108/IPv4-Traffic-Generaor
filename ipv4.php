@@ -90,94 +90,94 @@
 				}
 			}
 		
-			elseif ($p=="tcp") {
-				if ($c=="cont") {
-					if ($po=="own") {
-						while (1) {
-							# code...
-							$data=substr($popt,$count,$plen);
-							$count=$count+$plen;
-							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d ".$data."-v $da");						if ($count>$plen) {
-								# code...
-								break;
-							}
-							sleep($gap);
-						}
-					}
-					elseif ($po=="rand") {
-						while (1) {
-							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d r".$plen."-v $da");
-							sleep($gap);
-						}
-						}
-					}
-					elseif ($c=="ncont") {
-						if($po=="own") {
-							for ($i=0; $i <$number ; $i++) { 
-								$data=substr($popt,$count,$plen);
-								$count=$count+$plen;
-								system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d ".$data."-v $da");
-								if ($count>$plen) {
-								break;
-							}
-							sleep($gap);
-						}
-					}
-					elseif ($po=="rand") {
-						for ($i=0; $i < $number; $i++) { 
-							# code...
-						}
-							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d r".$plen."-v $da");
-							sleep($gap);
+// 			elseif ($p=="tcp") {
+// 				if ($c=="cont") {
+// 					if ($po=="own") {
+// 						while (1) {
+// 							# code...
+// 							$data=substr($popt,$count,$plen);
+// 							$count=$count+$plen;
+// 							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d ".$data."-v $da");						if ($count>$plen) {
+// 								# code...
+// 								break;
+// 							}
+// 							sleep($gap);
+// 						}
+// 					}
+// 					elseif ($po=="rand") {
+// 						while (1) {
+// 							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d r".$plen."-v $da");
+// 							sleep($gap);
+// 						}
+// 						}
+// 					}
+// 					elseif ($c=="ncont") {
+// 						if($po=="own") {
+// 							for ($i=0; $i <$number ; $i++) { 
+// 								$data=substr($popt,$count,$plen);
+// 								$count=$count+$plen;
+// 								system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d ".$data."-v $da");
+// 								if ($count>$plen) {
+// 								break;
+// 							}
+// 							sleep($gap);
+// 						}
+// 					}
+// 					elseif ($po=="rand") {
+// 						for ($i=0; $i < $number; $i++) { 
+// 							# code...
+// 						}
+// 							system("sendip -p ipv4 -is $sa -p tcp -ts $sp -td $dp -d r".$plen."-v $da");
+// 							sleep($gap);
 
-						}
-				}
-			}
-			}
-			elseif ($p=="icmp") {
-				if($c=="cont")
-				{
-					if($po=="own")
-					{
-						while (1) {
-							$data=substr($popt,$count,$plen);
-							$count=$count+$plen;
-							system("sendip -p ipv4 -is $sa -p icmp -d ".$data."-v $da");
-							if ($count>$len) {
-								break;
-							}
-							sleep($gap);
-						}
-					}
-					elseif ($po=="rand") {
-						while (1) {
-							system("sendip -p ipv4 -is $sa -p icmp -d r".$plen."-v $da");
-							sleep($gap);
-						}
+// 						}
+// 				}
+// 			}
+// 			}
+// 			elseif ($p=="icmp") {
+// 				if($c=="cont")
+// 				{
+// 					if($po=="own")
+// 					{
+// 						while (1) {
+// 							$data=substr($popt,$count,$plen);
+// 							$count=$count+$plen;
+// 							system("sendip -p ipv4 -is $sa -p icmp -d ".$data."-v $da");
+// 							if ($count>$len) {
+// 								break;
+// 							}
+// 							sleep($gap);
+// 						}
+// 					}
+// 					elseif ($po=="rand") {
+// 						while (1) {
+// 							system("sendip -p ipv4 -is $sa -p icmp -d r".$plen."-v $da");
+// 							sleep($gap);
+// 						}
 
-						}
-					}
-					elseif ($c=="ncont") {
-						if($po=="own") {
-							for ($i=0; $i <$number ; $i++) { 
-								$data=substr($popt,$count,$plen);
-								$count=$count+$plen;
-								system("sendip -p ipv4 -is $sa -p icmp -d ".$data."-v $da");
-								if ($c>$len) {
-								break;
-							}
-							sleep($gap);
-						}
-					}
-					elseif ($po=="rand") {
-						for ($i=0; $i < $number; $i++) { 
-							system("sendip -p ipv4 -is $sa -p icmp -d r".$plen."-v $da");
-							sleep($gap);
+// 						}
+// 					}
+// 					elseif ($c=="ncont") {
+// 						if($po=="own") {
+// 							for ($i=0; $i <$number ; $i++) { 
+// 								$data=substr($popt,$count,$plen);
+// 								$count=$count+$plen;
+// 								system("sendip -p ipv4 -is $sa -p icmp -d ".$data."-v $da");
+// 								if ($c>$len) {
+// 								break;
+// 							}
+// 							sleep($gap);
+// 						}
+// 					}
+// 					elseif ($po=="rand") {
+// 						for ($i=0; $i < $number; $i++) { 
+// 							system("sendip -p ipv4 -is $sa -p icmp -d r".$plen."-v $da");
+// 							sleep($gap);
 						
-							}
-			}
-		}
-	}
+// 							}
+// 			}
+// 		}
+// 	}
 
 ?>
 </body>
