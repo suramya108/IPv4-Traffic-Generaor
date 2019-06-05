@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+<title>IPV4 Traffic Generator</title>
+</head>
+<body background="1.jpg">
+<form method="POST" action="test.php"><center>
+	<h1>IPV4 Traffic Generator</h1>
+	<h3>
+<table border="2px solid " bordercolor="black">
+<tr><td>
+<label for="src_add">Source Address of IPv4</label></td>
+<td>
+<input type="text" name="src_add"></td></tr>
+<tr><td>
+<label for="dest_add">Destination Address of IPv4</label>
+</td><td>
+<input type="text" name="dest_add"></td></tr>
+<tr><td>Protocol</td><td><select name ="prot" onclick="disabledrop(this)">
+<option value="udp">UDP</option>
+<option value="tcp">TCP</option>
+<option value="icmp">ICMP</option></select></td></tr>
+
+<tr><td>Source Port</td><td><select id="srcp" name="srcp">
+<option value="443">443</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="53">53</option>
+<option value="80">80</option></select></td></tr>
+
+<tr><td>Destination Port</td><td><select id="dstp" name="dstp">
+<option value="443">443</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="53">53</option>
+<option value="80">80</option></select>
+<script>
+function disabledrop(a1)
+{
+var v1=a1.value;
+if(v1=="icmp")
+{
+	document.getElementById('srcp').disabled=true;
+	document.getElementById('dstp').disabled=true;
+}	
+else
+{
+	document.getElementById('srcp').disabled=false;
+	document.getElementById('dstp').disabled=false;
+}
+}
+</script>
+</td></tr>
+<tr><td>Number of packets</td><td><select name="cont" onchange="disablen(this)">
+	<option value="cont">Continuous</option>
+	<option value="ncont">Non-continuous</option></select>
+	<input type="text" name="number" disabled="true" id="t"><br>
+	<script>
+function disablen(a2)
+{
+	var t1=document.getElementById('t')
+	t1.disabled=a2.value=="cont";
+}
+</script></td></tr>
+<tr><td>Payload length per packet</td>
+<td><select name="len">
+<option>512</option>
+<option>8</option></select>
+<tr><td>Interpacket gap</td>
+	<td>
+		<input type="text" name="gap"></td></tr>
+<tr><td>Payload Option</td>
+<td><input type="radio" name="select" value="own" type="text" onclick="dis(this)" checked="true">Defined
+	<input type="radio" name="select" value="rand" onclick="dis(this)" >Random<br>
+	<input type="text" name="po" id="p1"><br>
+<script>
+function dis(a2)
+{
+	var p=a2.value;
+	if(p=="a2")
+	{
+		document.getElementById("p1").disabled=false;
+	}
+	else if(p=="rand")
+	{
+		document.getElementById("p1").disabled=true;
+	}
+}
+</script>
+</td></tr>
+</table>
+<br><br><br>
+<button type="sub">SUBMIT</button>
+<button type="reset">RESET</button>
+</h3>
+</center></form>
+</body>
+</html>
